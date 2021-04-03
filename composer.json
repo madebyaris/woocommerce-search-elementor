@@ -1,0 +1,12 @@
+{
+    "name": "Mba_Woo_Se",
+    "description": "Plugin Description",
+    "authors": [
+        {
+            "name": "M Aris Setiawan",
+            "email": "arissetia.m@gmail.com"
+        }
+    ],
+    "require": {
+    }
+}
