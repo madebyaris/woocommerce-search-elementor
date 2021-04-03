@@ -163,6 +163,9 @@ class Mba_Woo_Se {
 	private function define_admin_hooks() {
 
 		$plugin_admin = new Mba_Woo_Se_Admin( $this->get_plugin_name(), $this->get_version() );
+		$elementor_core = new Mba_Woo_Se_Elementor_Core();
+
+		$this->loader->add_action( 'plugins_loaded', $elementor_core, 'on_plugin_loaded' );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
