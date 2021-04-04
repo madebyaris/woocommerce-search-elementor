@@ -3,6 +3,7 @@
  * The Elementor core.
  *
  * Test if the WordPress, PHP, and any other plugin that need already meet the requirements.
+ * referance: https://developers.elementor.com/creating-an-extension-for-elementor/
  *
  * @link       https://madebyaris.com/
  * @since      1.0.0
@@ -51,7 +52,11 @@ final class Mba_Woo_Se_Elementor_Core {
     }
 
     public function init_widgets() {
-
+		foreach ( glob( MBA_WOO_SE_DIR . 'includes/elementor/widgets/class-*.php' ) as $filename ) {
+			require_once $filename;
+		}
+        // Register Widget.
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Mba_Woo_Se_El_Woo_Search() );
     }
     public function init_controls() {
 
